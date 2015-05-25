@@ -1,0 +1,27 @@
+<ui: composition xmlns=" http :// www .w3. org /1999/ xhtml "
+	xmlns:ui=" http :// java . sun . com / jsf / facelets "
+	xmlns:h=" http :// java . sun . com / jsf / html "
+	xmlns:f=" http :// java . sun . com / jsf / core ">
+
+	<h:inputHidden value="#{ timeBean . time .id}" />
+	<h:panelGrid columns="3">
+		<h:outputLabel value=" Nome : " for=" nome " />
+		<h:inputText id="nome" required=" true "
+			requiredMessage="O nome do time é obrigatório "
+			value="#{ timeBean.time.nome }">
+		</h:inputText>
+		<h:message for="nome" />
+
+		<h:outputLabel value="Técnico:" for="tecnico" />
+		<h:inputText id="tecnico" required="true"
+			requiredMessage="O nome do técnico é obrigatório "
+			value="#{timeBean.time.tecnico}">
+		</h:inputText>
+		<h:message for="tecnico" />
+
+		<h:commandButton value="Cadastrar">
+			<f:ajax event="click " execute="@form"
+				listener="#{timeBean.adiciona }" render="@all" />
+		</h:commandButton>
+	</h:panelGrid>
+	</ui:composition>

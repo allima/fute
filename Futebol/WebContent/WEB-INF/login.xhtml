@@ -1,0 +1,22 @@
+<ui: composition template="/WEB - INF / templates / template . xhtml "
+	xmlns=" http :// www .w3. org /1999/ xhtml "
+	xmlns:ui=" http :// java . sun . com / jsf / facelets "
+	xmlns:h=" http :// java . sun . com / jsf / html "
+	xmlns:f=" http :// java . sun . com / jsf / core ">
+	<ui: define name=" conteudo ">
+		<p>Preencha o formulário abaixo para entrar no sistema .</p>
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputLabel value=" Usuário : " for="campo - usuario " />
+				<h:inputText value="#{ autenticadorBean . usuario }"
+					id="campo - usuario " />
+				<h:outputLabel value=" Senha : " for="campo - senha " />
+				<h:inputSecret value="#{ autenticadorBean . senha }"
+					id="campo - senha " />
+			</h:panelGrid>
+			<h:commandButton value=" Entrar "
+				action="#{ autenticadorBean . autentica }" />
+		</h:form>
+		<h:messages />
+		</ui:define>
+23 </ui:composition>
