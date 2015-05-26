@@ -2,10 +2,13 @@ package br.com.k19.modelo.entidades;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Jogador {
@@ -17,7 +20,7 @@ public class Jogador {
 	private String nome;
 
 	private String posicao;
-
+	@Temporal(TemporalType.DATE)
 	private Calendar dataDeNascimento = new GregorianCalendar();
 
 	@ManyToOne

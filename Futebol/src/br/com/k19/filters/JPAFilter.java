@@ -12,15 +12,14 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-@WebFilter(servletNames = { " Faces Servlet " })
+@WebFilter(servletNames = { "Faces Servlet" })
 public class JPAFilter implements Filter {
 
 	private EntityManagerFactory factory;
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		this.factory = Persistence
-				.createEntityManagerFactory("K19 - Futebol -PU");
+		this.factory = Persistence.createEntityManagerFactory("Futebol");
 	}
 
 	@Override
@@ -34,7 +33,7 @@ public class JPAFilter implements Filter {
 
 		// CHEGADA
 		EntityManager manager = this.factory.createEntityManager();
-		request.setAttribute(" EntityManager ", manager);
+		request.setAttribute("EntityManager", manager);
 		manager.getTransaction().begin();
 		// CHEGADA
 
