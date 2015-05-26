@@ -96,7 +96,7 @@ public class JogadorBean {
 		FacesContext fc = FacesContext.getCurrentInstance();
 		ExternalContext ec = fc.getExternalContext();
 		HttpServletRequest request = (HttpServletRequest) ec.getRequest();
-		return (EntityManager) request.getAttribute(" EntityManager ");
+		return (EntityManager) request.getAttribute("EntityManager");
 	}
 
 }
