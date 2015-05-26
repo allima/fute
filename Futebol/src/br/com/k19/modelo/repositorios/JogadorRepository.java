@@ -33,7 +33,7 @@ public class JogadorRepository {
 	}
 
 	public List<Jogador> getLista() {
-		Query query = this.manager.createQuery(" select x from Jogador x");
+		Query query = this.manager.createQuery("select x from Jogador x");
 		return query.getResultList();
 	}
 }

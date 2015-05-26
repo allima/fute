@@ -21,8 +21,8 @@ public class TimeRepository {
 	public void remove(Long id) {
 		Time time = this.procura(id);
 		Query query = this.manager
-				.createQuery(" select x from Jogador x where x. time = :time ");
-		query.setParameter(" time ", time);
+				.createQuery("select x from Jogador x where x.time =:time");
+		query.setParameter("time", time);
 		List<Jogador> jogadores = query.getResultList();
 		for (Jogador jogador : jogadores) {
 			jogador.setTime(null);
@@ -39,7 +39,7 @@ public class TimeRepository {
 	}
 
 	public List<Time> getLista() {
-		Query query = this.manager.createQuery(" select x from Time x");
+		Query query = this.manager.createQuery("select x from Time x");
 		return query.getResultList();
 	}
 }

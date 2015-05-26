@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-//@WebFilter(servletNames = { "Faces Servlet" })
+@WebFilter(servletNames = { "Faces Servlet" })
 public class ControleDeAcesso implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
@@ -20,7 +20,7 @@ public class ControleDeAcesso implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpSession session = req.getSession();
 		if (session.getAttribute("usuario") != null
-				|| req.getRequestURI().endsWith("login.xhtml ")) {
+				|| req.getRequestURI().endsWith("login.xhtml")) {
 			chain.doFilter(request, response);
 		} else {
 			HttpServletResponse res = (HttpServletResponse) response;
