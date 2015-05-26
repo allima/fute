@@ -1,31 +1,29 @@
-<! DOCTYPE html PUBLIC " -// W3C // DTD XHTML 1.0 Transitional // EN" " http :// www .w3. org /TR/ xhtml1 / DTD / xhtml1 - transitional . dtd ">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtmll/DTD/xhtmll-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+
 <h:head>
 	<title>K19 Futebol</title>
 </h:head>
 <h:body>
 	<h:outputStylesheet library="css" name="style.css" />
 	<div id="header">
-		<h:form style="float:left;" rendered="#{notemptysessionScope.usuario}">
-			<h:link value=" Times " outcome=" times " />
-&nbsp;
-<h:link value="Jogadores" outcome=" jogadores " />
-&nbsp;
-<h:commandLink value="Logout" action="#{autenticadorBean.registraSaida}" />
+		<h:form style="float:left;">
+			<h:link value="Times" outcome="times" /> &nbsp; <h:link
+				value="Jogadores" outcome="jogadores" />
 		</h:form>
-		<h:graphicImage library="imagens" name="k19-logo.png"
-			style=" float:right;" />
+		<h:graphiclmage library="imagens" name="k19-logo.png"
+			style="float:right;" />
 		<div style="clear: both"></div>
 	</div>
 	<div id="conteudo">
-		<ui:insert name="conteudo"> Espaço para o conteúdo da tela </ui: insert >
+		<ui:insert name="conteudo"> Espaco para o conteklo da tela </ui:insert>
 	</div>
-	<div id="footer" style="">
-		<hr />
-		&copy; 2012 K19 . Todos os direitos reservados .
-	</div>
+
+	<div id="footer" style="text-align: center">&copy; 2012 K19 .
+		Todos os direitos reservados .</div>
 </h:body>
 </html>

@@ -1,67 +1,67 @@
-<ui: composition xmlns=" http :// www .w3. org /1999/ xhtml "
-	xmlns:ui=" http :// java . sun . com / jsf / facelets "
-	xmlns:h=" http :// java . sun . com / jsf / html "
-	xmlns:f=" http :// java . sun . com / jsf / core ">
-	<h: panelGroup rendered="#{ not empty jogadorBean . jogadores }">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<h:panelGroup rendered="#{not empty jogadorBean.jogadores}">
 		<h2>Lista de Jogadores</h2>
-		<h:dataTable id=" tabela " value="#{ jogadorBean . jogadores }"
-			var=" jogador " styleClass=" dados " rowClasses="par , impar ">
+		<h:dataTable id="tabela" value="#{jogadorBean.jogadores}"
+			var="jogador" styleClass="dados" rowClasses="par,impar ">
 			<h:column>
-				<f:facet name=" header ">
+				<f:facet name="header">
 					<h:outputText value="Id" />
 				</f:facet>
-#{ jogador .id}
+		#{jogador.id}
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Nome" />
+				</f:facet>
+				#{jogador.nome}
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="PosiÃ§Ã£o" />
+				</f:facet>
+#{jogador.posicao}
 </h:column>
 			<h:column>
-				<f:facet name=" header ">
-					<h:outputText value=" Nome " />
+				<f:facet name="header ">
+					<h:outputText value="Data de Nascimento" />
 				</f:facet>
-#{ jogador . nome }
-</h:column>
-			<h:column>
-				<f:facet name=" header ">
-					<h:outputText value=" Posição " />
-				</f:facet>
-#{ jogador . posicao }
-</h:column>
-			<h:column>
-				<f:facet name=" header ">
-					<h:outputText value=" Data de Nascimento " />
-				</f:facet>
-				<h:outputText value="#{ jogador . dataDeNascimento . time }">
-					<f:convertDateTime pattern="dd/MM/ yyyy " />
+				<h:outputText value="#{jogador.dataDeNascimento.time}">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
 				</h:outputText>
 			</h:column>
 			<h:column>
-				<f:facet name=" header ">
-					<h:outputText value=" Time " />
+				<f:facet name="header">
+					<h:outputText value="Time" />
 				</f:facet>
-#{ jogador . time . nome }
+#{jogador.time.nome}
 </h:column>
 			<h:column>
-				<f:facet name=" header ">
-					<h:outputText value=" Alterar " />
+				<f:facet name="header">
+					<h:outputText value="Alterar" />
 				</f:facet>
-				<f:ajax event=" click " render=" @form "
-					listener="#{ jogadorBean . preparaAlteracao }">
+				<f:ajax event="click" render="@form"
+					listener="#{jogadorBean.preparaAlteracao}">
 					<h:commandLink>
-						<f:param name="id" value="#{ jogador .id}" />
+						<f:param name="id" value="#{jogador.id}" />
 Alterar
 </h:commandLink>
 				</f:ajax>
 			</h:column>
 			<h:column>
-				<f:facet name=" header ">
-					<h:outputText value=" Remover " />
+				<f:facet name="header">
+					<h:outputText value="Remover" />
 				</f:facet>
-				<f:ajax event=" click " render=" @form "
-					listener="#{ jogadorBean . remove }">
+				<f:ajax event="click" render="@form"
+					listener="#{jogadorBean.remove}">
 					<h:commandLink>
-						<f:param name="id" value="#{ jogador .id}" />
+						<f:param name="id" value="#{jogador.id}" />
 Remover
 </h:commandLink>
 				</f:ajax>
 			</h:column>
 		</h:dataTable>
-		</h:panelGroup>
-		</ui:composition>
+	</h:panelGroup>
+</ui:composition>
