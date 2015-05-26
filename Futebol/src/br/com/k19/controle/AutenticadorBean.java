@@ -40,11 +40,10 @@ public class AutenticadorBean {
 	}
 
 	static {
-		AutenticadorBean.mapa.put(" k19 ", "k19 ");
-		AutenticadorBean.mapa.put(" jonas . hirata ", "jonas . hirata ");
-		AutenticadorBean.mapa.put(" marcelo . martins ", " marcelo . martins ");
-		AutenticadorBean.mapa.put(" rafael . cosentino ",
-				" rafael . cosentino ");
+		AutenticadorBean.mapa.put("k19", "k19");
+		AutenticadorBean.mapa.put("jonas.hirata", "jonas.hirata");
+		AutenticadorBean.mapa.put("marcelo.martins", "marcelo.martins");
+		AutenticadorBean.mapa.put("rafael.cosentino", "rafael.cosentino ");
 	}
 
 	public String autentica() {

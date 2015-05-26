@@ -1,11 +1,7 @@
 body {
 	font: 18 px Arial;
 	margin: 0 0 0 0;
-	background
-	-
-	color
-	:
-	#EEEEEE;
+	background-color: #EEEEEE;
 }
 
 h1 {
@@ -55,7 +51,8 @@ a: hover {
 	background-color: #f6f6fa;
 }
 
-input {font - size :16px;
+input {
+	font-size: 16px;
 	border: 1px solid #0000 c6;
 	background-color: #f6f6fa;
 }

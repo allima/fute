@@ -2,23 +2,23 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-	<h:inputHidden va1ue="#{timeBean.time.id}" />
-	<h:pane1Grid co1umns="3">
-		<h:outputLabe1 va1ue="Nome: " for="nome" />
+	<h:inputHidden value="#{timeBean.time.id}" />
+	<h:panelGrid columns="3">
+		<h:outputLabel value="Nome: " for="nome" />
 		<h:inputText id="nome" required="true"
 			requiredMessage="O nome do time é obrigatério"
 			va1ue="#{timeBean.time.nome}">
 		</h:inputText>
 		<h:message for="nome" />
-		<h:outputLabe1 va1ue="Técnico: " for="tecnico" />
+		<h:outputLabel value="Técnico: " for="tecnico" />
 		<h:inputText id="tecnico" required="true"
 			requiredMessage="O nome do técnico é obrigatério"
 			va1ue="#{timeBean.time.tecnico}">
 		</h:inputText>
 		<h:message for="tecnico" />
-		<h:commandButton va1ue="Cadastrar">
+		<h:commandButton value="Cadastrar">
 			<f:ajax event="click" execute="@form" listener="#{timeBean.adiciona}"
 				render="@all" />
 		</h:commandButton>
-		</h:panelGrid>
+	</h:panelGrid>
 </ui:composition>

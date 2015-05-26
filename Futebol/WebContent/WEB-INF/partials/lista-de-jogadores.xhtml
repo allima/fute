@@ -2,66 +2,72 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-	<h:panelGroup rendered="#{not empty jogadorBean.jogadores}">
+
+	<h:panel Grouprendered="#{not empty jogadorBean.jogadores}">
 		<h2>Lista de Jogadores</h2>
-		<h:dataTable id="tabela" value="#{jogadorBean.jogadores}"
-			var="jogador" styleClass="dados" rowClasses="par,impar ">
+		<h:data Table id="tabela" value="#{jogadorBean.jogadores}"
+			var="jogador" style Class="dados" row Classes="par,impar">
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="Id" />
+					<h:output Textvalue="Id" />
 				</f:facet>
-		#{jogador.id}
+	#{jogador.id}
+				
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="Nome" />
+					<h:output Textvalue="Nome" />
 				</f:facet>
-				#{jogador.nome}
+	#{jogador.nome}
+				
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="Posição" />
+					<h:output Textvalue="Posição" />
 				</f:facet>
-#{jogador.posicao}
-</h:column>
-			<h:column>
-				<f:facet name="header ">
-					<h:outputText value="Data de Nascimento" />
-				</f:facet>
-				<h:outputText value="#{jogador.dataDeNascimento.time}">
-					<f:convertDateTime pattern="dd/MM/yyyy" />
-				</h:outputText>
+	#{jogador.posicao}
+				
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="Time" />
+					<h:output Textvalue="DatadeNascimento" />
 				</f:facet>
-#{jogador.time.nome}
-</h:column>
+				<h:output Textvalue="#{jogador.dataDeNascimento.time}">
+					<f:convert Date Timepattern="dd/MM/yyyy" />
+				</h:output Text>
+			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="Alterar" />
+					<h:output Textvalue="Time" />
+				</f:facet>
+	#{ jogador.time.nome }
+				
+			
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:output Textvalue="Alterar" />
 				</f:facet>
 				<f:ajax event="click" render="@form"
 					listener="#{jogadorBean.preparaAlteracao}">
-					<h:commandLink>
+					<h:command Link>
 						<f:param name="id" value="#{jogador.id}" />
-Alterar
-</h:commandLink>
+	Alterar
+	</h:command Link>
 				</f:ajax>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="Remover" />
+					<h:output Textvalue="Remover" />
 				</f:facet>
 				<f:ajax event="click" render="@form"
 					listener="#{jogadorBean.remove}">
-					<h:commandLink>
+					<h:command Link>
 						<f:param name="id" value="#{jogador.id}" />
-Remover
-</h:commandLink>
+	Remover
+	</h:command Link>
 				</f:ajax>
 			</h:column>
-		</h:dataTable>
-	</h:panelGroup>
+		</h:data Table>
+	</h:panel Group>
 </ui:composition>

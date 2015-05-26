@@ -1,52 +1,54 @@
-<ui:composition template="/WEB-INF/templates/template.xhtml"
-	xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-	<h:panelGroup rendered="#{ not empty timeBean.times}">
+
+	<h:panelGroup rendered="#{not empty timeBean.times}">
 		<h2>Lista de Times</h2>
-		<h:dataTable id="tabela" value="#{timeBean.times}" var=" time"
-			styleClass="dados" rowClasses="par,impar ">
+		<h:dataTable id="tabela" value="#{timeBean.times}" var="time"
+			styleClass="dados" rowClasses="par,impar">
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Id" />
 				</f:facet>
-#{time.id}
-</h:column>
+	#{time.id}			
+			</h:column>
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Nome" />
 				</f:facet>
-#{time.nome}
-</h:column>
+	#{time.nome}
+			</h:column>
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Técnico" />
 				</f:facet>
-#{time.tecnico }
-</h:column>
+	#{time.tecnico}		
+			</h:column>
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Alterar" />
 				</f:facet>
-				<f:ajax event="click " render="@form "
+				<f:ajax event="click" render="@form"
 					listener="#{timeBean.preparaAlteracao}">
 					<h:commandLink>
 						<f:param name="id" value="#{time.id}" />
-Alterar
-</h:commandLink>
+	Alterar
+	</h:commandLink>
 				</f:ajax>
+
 			</h:column>
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Remover" />
 				</f:facet>
-				<f:ajax event="click" render="@form " listener="#{timeBean.remove}">
+				<f:ajax event="click" render="@form" listener="#{timeBean.remove}">
 					<h:commandLink>
 						<f:param name="id" value="#{time.id}" />
- Remover
- </h:commandLink>
+	Remover
+	</h:commandLink>
 				</f:ajax>
+
 			</h:column>
 		</h:dataTable>
 	</h:panelGroup>
