@@ -7,36 +7,35 @@
 
 	<h:panelGrid columns="3">
 
-		<h:outputLabel value=" Nome : " for=" jogador - nome " />
+		<h:outputLabel value=" Nome : " for="jogador-nome" />
 
-		<h:inputText id=" jogador - nome " required=" true "
+		<h:inputText id="jogador-nome" required="true"
 			requiredMessage="O nome do jogador é obrigatório "
-			value="#{ jogadorBean . jogador . nome }">
+			value="#{jogadorBean.jogador.nome}">
 		</h:inputText>
-		<h:message for=" jogador - nome " />
-		<h:outputLabel value=" Posição : " for=" jogador - posicao " />
-		<h:inputText id=" jogador - posicao " required=" true "
+		<h:message for="jogador-nome" />
+		<h:outputLabel value=" Posição : " for="jogador-posicao" />
+		<h:inputText id="jogador-posicao" required="true "
 			requiredMessage="A posição do jogador deve ser especificada "
-			value="#{ jogadorBean.jogador.posicao }">
+			value="#{jogadorBean.jogador.posicao}">
 		</h:inputText>
-		<h:message for=" jogador - posicao " />
-		<h:outputLabel value=" Data de Nascimento : "
-			for=" jogador - nascimento " />
-		<h:inputText id="jogador-nascimento " required=" true "
+		<h:message for="jogador-posicao" />
+		<h:outputLabel value=" Data de Nascimento : " for="jogador-nascimento" />
+		<h:inputText id="jogador-nascimento" required="true"
 			requiredMessage=" Informe a data de nascimento do jogador "
 			value="#{jogadorBean.jogador.dataDeNascimento.time }">
 			<f:convertDateTime pattern="dd/MM/yyyy" />
 		</h:inputText>
-		<h:message for=" jogador - nascimento " />
-		<h:outputLabel value=" Time : " for=" jogador - time " />
-		<h:selectOneMenu id=" jogador - time " value="#{jogadorBean.timeID }">
-			<f:selectItems value="#{timeBean.times }" var="time"
+		<h:message for="jogador-nascimento" />
+		<h:outputLabel value="Time:" for="jogador-time" />
+		<h:selectOneMenu id="jogador-time" value="#{jogadorBean.timeID}">
+			<f:selectItems value="#{timeBean.times}" var="time"
 				itemLabel="#{time.nome}" itemValue="#{time.id}" />
 		</h:selectOneMenu>
-		<h:message for=" jogador-time" />
-		<h:commandButton value=" Cadastrar " styleClass="botao-formulario ">
+		<h:message for="jogador-time" />
+		<h:commandButton value="Cadastrar" styleClass="botao-formulario">
 			<f:ajax event="click" execute="@form"
-				listener="#{jogadorBean.adiciona}" render="@form " />
+				listener="#{jogadorBean.adiciona}" render="@form" />
 		</h:commandButton>
 	</h:panelGrid>
 </ui:composition>
