@@ -3,7 +3,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 
-	<h:panelGroup rendered="#{notemptytimeBean.times}">
+	<h:panelGroup rendered="#{not empty timeBean.times}">
 		<h2>Lista de Times</h2>
 		<h:dataTable id="tabela" value="#{timeBean.times}" var="time"
 			styleClass="dados" rowClasses="par,impar">
